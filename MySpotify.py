@@ -6,7 +6,9 @@ from spotipy.oauth2 import SpotifyClientCredentials
 #Pass keys into credentials manager for the Spotify Web API
 client_credentials_manager = SpotifyClientCredentials(client_id,client_secret)
 spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-
+def update_credentials(my_id,secret):
+	client_credentials_manager = SpotifyClientCredentials(my_id,secret)
+	spotify = spotipy.Spotify(client_credentials_manager)
 
 def get_artist_uri(artist):
     """
@@ -52,8 +54,21 @@ def get_song_features(song_uri):
 	"""
 	song_features = spotify.audio_features(song_uri)
 	return song_features
-artist = input("What Artist? ")
-album = input("What Album? ")
-song = input("What Song? ")
+def get_profile():
+	"""
+	get_profile()
 
-print(get_song_features(get_song_uri(song,album, artist)))
+	Returns information about your Spotify Profile
+	"""
+def get_playlist(playlist):
+	"""
+	get_playlist(playlist)
+
+	Returns playlist information from your profile.
+	"""
+
+# artist = input("What Artist? ")
+# album = input("What Album? ")
+# song = input("What Song? ")
+
+# print(get_song_features(get_song_uri(song,album, artist)))
