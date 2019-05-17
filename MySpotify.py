@@ -4,7 +4,7 @@ import json
 from spotipy.oauth2 import SpotifyClientCredentials
 
 #Pass keys into credentials manager for the Spotify Web API
-client_credentials_manager = SpotifyClientCredentials(os.environ.["SPOTIFY-CLIENT"],os.environ.["SPOTIFY-SECRET"])
+client_credentials_manager = SpotifyClientCredentials(os.environ.["SPOTIFY_CLIENT"],os.environ.["SPOTIFY_SECRET"])
 spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 def update_credentials(my_id,secret):
 	client_credentials_manager = SpotifyClientCredentials(my_id,secret)
